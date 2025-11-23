@@ -35,9 +35,24 @@ python consumer.py
 docker exec -it mysql mysql -unadia -pnadia123 payments
 
 
+open it again 
+first clone it by 
+> git clone https://github.com/NadiaMoustafa/payment-scoring.git
+> make sure you downloaded the docker disctop and runned this : docker-compose up -d
+> then check if docker running : docker ps
+> make an environment : python -m venv venv
+> then activated : Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+> venv\Scripts\activate
+> then install the requirments : pip install -r requirements.txt 
+> supposed to run traned.model but i aleadry runned it and save the model in pkl file so i can use it (saving your time)
+> run the producer to make kafka send the real time transactions : python producer.py
+> and run in another terminal the consumer to make the model calculate the score and save the result in the mqsql database :python .\consumer.py
+> then open any MYSQl driver to open the database with its credintail apove and you will see the transactions with model score saved in table called : scored_transactions
 
+> 
 ## 6️⃣ ملاحظات
 ```markdown
 - All transactions are synthetic for demonstration purposes.
 - The model is pre-trained and saved as `model.joblib`.
 - Docker ensures that Kafka and MySQL run with correct configuration.
+
