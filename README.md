@@ -55,12 +55,43 @@ The system reads payment transactions from Kafka in real-time, applies the model
 3. Real-Time Processing: Consumer : it runs in real-time read the transactions from kafka(producer) & use the model to score the paymets then write into mySQL
 4. Testing & Validation : finally you can test by open the DB in your device and see the scores (the results) in the real-time
    
+## Test Data
+
+- **Kafka Messages:**  
+  The project generates sample payment transactions in real-time via the Kafka producer.  
+  For reference, here is an example of the message format:
+
+  ```json
+  [
+    {"transaction_id": 1, "amount": 123.45, "customer_age": 34, "transaction_type": 1, "is_fraud": 0},
+    {"transaction_id": 2, "amount": 678.90, "customer_age": 45, "transaction_type": 0, "is_fraud": 1},
+    {"transaction_id": 3, "amount": 50.25, "customer_age": 29, "transaction_type": 1, "is_fraud": 0}
+  ]
+
+- **MySQL Schema:**
+  The scored transactions are saved in the scored_transactions table in MySQL.
+  Example schema:
+  
+  CREATE DATABASE IF NOT EXISTS payments;
+
+USE payments;
+
+CREATE TABLE IF NOT EXISTS scored_transactions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    transaction_id INT,
+    amount FLOAT,
+    customer_age INT,
+    transaction_type INT,
+    score FLOAT
+);
+
 ## THE DB TABLE 
 
 <img width="997" height="402" alt="Screenshot 2025-11-23 140259" src="https://github.com/user-attachments/assets/b1674055-4e7b-481e-96a6-1d9ff7dd7a9d" />
 
 Finally, 
 > You can see a recorded video demonstration / submission of the project **here** : https://drive.google.com/file/d/1kq4KLIPfGVkVpOK8_H2LpEaZIqlRKQhy/view?usp=sharing
+
 
 
 
