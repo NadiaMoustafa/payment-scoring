@@ -1,6 +1,6 @@
 # Real-Time Payment Scoring Model
 
-This project implements a real-time payment scoring system using:
+This project implements an End-to-End real-time payment scoring system using:
 - Apache Kafka for streaming transactions
 - A pre-trained machine learning model (Logistic Regression) for fraud detection / credit scoring
 - MySQL for storing the scoring results
@@ -39,7 +39,7 @@ The system reads payment transactions from Kafka in real-time, applies the model
   **Start the Producer – sends real-time transactions to Kafka**: python producer.py
   **Start the Consumer – reads transactions from Kafka, scores them using the pre-trained model, and stores the results in MySQL** : python consumer.py
   
-  **Check Results in MySQL** : Open any MySQL client (e.g., DBeaver) with the credentials provided in the project. The scored transactions will be available in the **table: scored_transactions**
+**9. Check Results in MySQL** : Open any MySQL client (e.g., DBeaver) with the credentials provided in the project. The scored transactions will be available in the **table: scored_transactions**
 
 ## Overview about the Training (The model)
 
@@ -48,9 +48,16 @@ The system reads payment transactions from Kafka in real-time, applies the model
 3. Model trained with max_iter=200 and solver='liblinear' (optimized for small datasets)
 4. Saved Model: The trained model is stored in model.pkl for real-time scoring in the consumer pipeline
 
+## Implementation Phases
 
+1. Setup & Configuration : (docker-compose to work Kafka + Zookeeper + MySQL)
+2. Model Integration : The model is trained and saved as a pkl file so the consumer can use it directly
+3. Real-Time Processing: Consumer : it runs in real-time read the transactions from kafka(producer) & use the model to score the paymets then write into mySQL
+4. Testing & Validation : finally you can test by open the DB in your device and see the scores (the results) in the real-time
    
+## THE DB TABLE 
 
+<img width="997" height="402" alt="Screenshot 2025-11-23 140259" src="https://github.com/user-attachments/assets/b1674055-4e7b-481e-96a6-1d9ff7dd7a9d" />
 
 
 
