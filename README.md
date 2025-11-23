@@ -43,12 +43,14 @@ The system reads payment transactions from Kafka in real-time, applies the model
 
 ## Overview about the Training (The model)
 
-1. Used 500 synthetic transactions (used small number like 500 to make the process faster as it is a prototype)
+1. Used 500 synthetic transactions (used number like 500 to make the process faster as it is a prototype but i made it Scalable for the future)
 2. Split into 80% training / 20% testing
 3. Model trained with max_iter=200 and solver='liblinear' (optimized for small datasets)
 4. Saved Model: The trained model is stored in model.pkl for real-time scoring in the consumer pipeline
 
+
    
+
 
 
 
