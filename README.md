@@ -59,6 +59,8 @@ The system reads payment transactions from Kafka in real-time, applies the model
 
 <img width="997" height="402" alt="Screenshot 2025-11-23 140259" src="https://github.com/user-attachments/assets/b1674055-4e7b-481e-96a6-1d9ff7dd7a9d" />
 
+Finally, 
+> You can see a recorded video demonstration / submission of the project **here** : https://drive.google.com/file/d/1kq4KLIPfGVkVpOK8_H2LpEaZIqlRKQhy/view?usp=sharing
 
 
 
