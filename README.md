@@ -37,6 +37,7 @@ The system reads payment transactions from Kafka in real-time, applies the model
 
 **8.  Run the Project** :
   **Start the Producer – sends real-time transactions to Kafka**: python producer.py
+  
   **Start the Consumer – reads transactions from Kafka, scores them using the pre-trained model, and stores the results in MySQL** : python consumer.py
   
 **9. Check Results in MySQL** : Open any MySQL client (e.g., DBeaver) with the credentials provided in the project. The scored transactions will be available in the **table: scored_transactions**
@@ -72,18 +73,20 @@ The system reads payment transactions from Kafka in real-time, applies the model
   The scored transactions are saved in the scored_transactions table in MySQL.
   Example schema:
   
-  CREATE DATABASE IF NOT EXISTS payments;
-
-USE payments;
-
-CREATE TABLE IF NOT EXISTS scored_transactions (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    transaction_id INT,
-    amount FLOAT,
-    customer_age INT,
-    transaction_type INT,
-    score FLOAT
-);
+  [
+    CREATE DATABASE IF NOT EXISTS payments;
+  
+      USE payments;
+      
+      CREATE TABLE IF NOT EXISTS scored_transactions (
+          id INT AUTO_INCREMENT PRIMARY KEY,
+          transaction_id INT,
+          amount FLOAT,
+          customer_age INT,
+          transaction_type INT,
+          score FLOAT
+      );
+  ]
 
 ## THE DB TABLE 
 
@@ -91,6 +94,7 @@ CREATE TABLE IF NOT EXISTS scored_transactions (
 
 Finally, 
 > You can see a recorded video demonstration / submission of the project **here** : https://drive.google.com/file/d/1kq4KLIPfGVkVpOK8_H2LpEaZIqlRKQhy/view?usp=sharing
+
 
 
 
