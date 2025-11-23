@@ -33,13 +33,26 @@ The system reads payment transactions from Kafka in real-time, applies the model
 
 **6. Install the project dependencies**: pip install -r requirements.txt
 
-**7. Model  **: The trained model is already saved as **model.pkl**, so you don’t need to retrain it. You can use it directly. (just to save your time)
+**7. Model** : The trained model is already saved as **model.pkl**, so you don’t need to retrain it. You can use it directly. (just to save your time)
 
 **8.  Run the Project** :
   **Start the Producer – sends real-time transactions to Kafka**: python producer.py
   **Start the Consumer – reads transactions from Kafka, scores them using the pre-trained model, and stores the results in MySQL** : python consumer.py
   
   **Check Results in MySQL** : Open any MySQL client (e.g., DBeaver) with the credentials provided in the project. The scored transactions will be available in the **table: scored_transactions**
+
+## Overview about the Training (The model)
+
+1. Used 500 synthetic transactions (used small number like 500 to make the process faster as it is a prototype)
+2. Split into 80% training / 20% testing
+3. Model trained with max_iter=200 and solver='liblinear' (optimized for small datasets)
+4. Saved Model: The trained model is stored in model.pkl for real-time scoring in the consumer pipeline
+
+   
+
+
+
+
 
 
 
