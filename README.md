@@ -54,7 +54,7 @@ The system reads payment transactions from Kafka in real-time, applies the model
 
 1. Setup & Configuration : (docker-compose to work Kafka + Zookeeper + MySQL)
 2. Model Integration : The model is trained and saved as a pkl file so the consumer can use it directly
-3. Real-Time Processing: Consumer : it runs in real-time read the transactions from kafka(producer) & use the model to score the paymets then write into mySQL
+3. Real-Time Processing: Consumer : it runs in real-time read the transactions from kafka (producer) & use the model to score the payments then write into mySQL
 4. Testing & Validation : finally you can test by open the DB in your device and see the scores (the results) in the real-time
    
 ## Test Data
@@ -95,6 +95,7 @@ The system reads payment transactions from Kafka in real-time, applies the model
 
 Finally, 
 > You can see a recorded video demonstration / submission of the project **here** : https://drive.google.com/file/d/1kq4KLIPfGVkVpOK8_H2LpEaZIqlRKQhy/view?usp=sharing
+
 
 
 
