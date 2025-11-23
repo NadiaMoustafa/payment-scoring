@@ -74,7 +74,7 @@ The system reads payment transactions from Kafka in real-time, applies the model
   The scored transactions are saved in the scored_transactions table in MySQL.
   Example schema:
   
-  [
+  
   
       CREATE DATABASE IF NOT EXISTS payments;
       USE payments;
@@ -87,7 +87,7 @@ The system reads payment transactions from Kafka in real-time, applies the model
           transaction_type INT,
           score FLOAT      );
   
-  ]
+  
 
 ## THE DB TABLE 
 
@@ -95,6 +95,7 @@ The system reads payment transactions from Kafka in real-time, applies the model
 
 Finally, 
 > You can see a recorded video demonstration / submission of the project **here** : https://drive.google.com/file/d/1kq4KLIPfGVkVpOK8_H2LpEaZIqlRKQhy/view?usp=sharing
+
 
 
 
